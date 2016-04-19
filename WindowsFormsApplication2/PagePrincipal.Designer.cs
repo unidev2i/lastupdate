@@ -69,6 +69,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.importerTPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -160,7 +161,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.aToolStripMenuItem,
-            this.compteToolStripMenuItem});
+            this.compteToolStripMenuItem,
+            this.importerTPToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1185, 27);
@@ -214,27 +216,27 @@
             this.supprimerToolStripMenuItem,
             this.modifierToolStripMenuItem});
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.utilisateurToolStripMenuItem.Text = "Professeur";
             // 
             // ajouterToolStripMenuItem1
             // 
             this.ajouterToolStripMenuItem1.Name = "ajouterToolStripMenuItem1";
-            this.ajouterToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.ajouterToolStripMenuItem1.Size = new System.Drawing.Size(141, 24);
             this.ajouterToolStripMenuItem1.Text = "Ajouter";
             this.ajouterToolStripMenuItem1.Click += new System.EventHandler(this.ajouterToolStripMenuItem1_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.modifierToolStripMenuItem.Text = "Modifier";
             // 
             // eleveToolStripMenuItem
@@ -243,20 +245,20 @@
             this.ajouterToolStripMenuItem2,
             this.supprimerToolStripMenuItem1});
             this.eleveToolStripMenuItem.Name = "eleveToolStripMenuItem";
-            this.eleveToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.eleveToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.eleveToolStripMenuItem.Text = "Eleve";
             // 
             // ajouterToolStripMenuItem2
             // 
             this.ajouterToolStripMenuItem2.Name = "ajouterToolStripMenuItem2";
-            this.ajouterToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.ajouterToolStripMenuItem2.Size = new System.Drawing.Size(141, 24);
             this.ajouterToolStripMenuItem2.Text = "Ajouter";
             this.ajouterToolStripMenuItem2.Click += new System.EventHandler(this.ajouterToolStripMenuItem2_Click);
             // 
             // supprimerToolStripMenuItem1
             // 
             this.supprimerToolStripMenuItem1.Name = "supprimerToolStripMenuItem1";
-            this.supprimerToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.supprimerToolStripMenuItem1.Size = new System.Drawing.Size(141, 24);
             this.supprimerToolStripMenuItem1.Text = "Supprimer";
             this.supprimerToolStripMenuItem1.Click += new System.EventHandler(this.supprimerToolStripMenuItem1_Click);
             // 
@@ -266,20 +268,20 @@
             this.exporterToolStripMenuItem,
             this.importerToolStripMenuItem});
             this.sauvegardeToolStripMenuItem.Name = "sauvegardeToolStripMenuItem";
-            this.sauvegardeToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.sauvegardeToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.sauvegardeToolStripMenuItem.Text = "Sauvegarde";
             // 
             // exporterToolStripMenuItem
             // 
             this.exporterToolStripMenuItem.Name = "exporterToolStripMenuItem";
-            this.exporterToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.exporterToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.exporterToolStripMenuItem.Text = "Exporter";
             this.exporterToolStripMenuItem.Click += new System.EventHandler(this.exporterToolStripMenuItem_Click);
             // 
             // importerToolStripMenuItem
             // 
             this.importerToolStripMenuItem.Name = "importerToolStripMenuItem";
-            this.importerToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.importerToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.importerToolStripMenuItem.Text = "Importer";
             this.importerToolStripMenuItem.Click += new System.EventHandler(this.importerToolStripMenuItem_Click);
             // 
@@ -368,6 +370,13 @@
             this.chart3.Visible = false;
             this.chart3.Click += new System.EventHandler(this.chart3_Click);
             // 
+            // importerTPToolStripMenuItem
+            // 
+            this.importerTPToolStripMenuItem.Name = "importerTPToolStripMenuItem";
+            this.importerTPToolStripMenuItem.Size = new System.Drawing.Size(94, 23);
+            this.importerTPToolStripMenuItem.Text = "Importer TP";
+            this.importerTPToolStripMenuItem.Click += new System.EventHandler(this.importerTPToolStripMenuItem_Click);
+            // 
             // PagePrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,5 +439,6 @@
         private System.Windows.Forms.ToolStripMenuItem compteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerDeLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerDeMotDePasseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importerTPToolStripMenuItem;
     }
 }

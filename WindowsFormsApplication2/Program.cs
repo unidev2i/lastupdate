@@ -1,23 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    static class Program
+    internal static class Program
     {
+        #region Private Methods
+
         /// <summary>
-        /// Point d'entrée principal de l'application.
+        ///     Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Database.Connect();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AssistantConnexion());
         }
+
+        #endregion Private Methods
     }
 }

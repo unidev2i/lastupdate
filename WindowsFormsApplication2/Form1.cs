@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -13,6 +6,8 @@ namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
+        #region Public Constructors
+
         public Form1(Chart a)
         {
             InitializeComponent();
@@ -23,12 +18,16 @@ namespace WindowsFormsApplication2
             {
                 chart1.Series[0].Points.Add(b);
             }
-
         }
+
+        #endregion Public Constructors
+
+        #region Private Methods
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
+
+        #endregion Private Methods
     }
 }
