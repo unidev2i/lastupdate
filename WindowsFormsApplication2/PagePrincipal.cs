@@ -22,6 +22,7 @@ namespace WindowsFormsApplication2
         DelEleve graphic7 = null;
         DataGridDebug dataForm;
         string login;
+        
 
         public PagePrincipal()
         {
@@ -316,5 +317,11 @@ namespace WindowsFormsApplication2
             }
             
     }
+
+        private void sélectionnerLeDossierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form OptionTP = new OptionTP();
+            OptionTP.ShowDialog();
+        }
     }
 }

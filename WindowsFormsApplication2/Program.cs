@@ -8,6 +8,7 @@ namespace WindowsFormsApplication2
 {
     static class Program
     {
+        //public static string repoPath;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
