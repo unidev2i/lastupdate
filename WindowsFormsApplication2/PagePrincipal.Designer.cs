@@ -69,6 +69,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.importerTPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -160,7 +161,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.aToolStripMenuItem,
-            this.compteToolStripMenuItem});
+            this.compteToolStripMenuItem,
+            this.importerTPToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1185, 27);
@@ -189,7 +191,6 @@
             this.sélectionnerLeDossierToolStripMenuItem.Name = "sélectionnerLeDossierToolStripMenuItem";
             this.sélectionnerLeDossierToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.sélectionnerLeDossierToolStripMenuItem.Text = "Sélectionner le dossier";
-            this.sélectionnerLeDossierToolStripMenuItem.Click += new System.EventHandler(this.sélectionnerLeDossierToolStripMenuItem_Click);
             // 
             // deconnexionToolStripMenuItem
             // 
@@ -367,6 +368,13 @@
             this.chart3.Visible = false;
             this.chart3.Click += new System.EventHandler(this.chart3_Click);
             // 
+            // importerTPToolStripMenuItem
+            // 
+            this.importerTPToolStripMenuItem.Name = "importerTPToolStripMenuItem";
+            this.importerTPToolStripMenuItem.Size = new System.Drawing.Size(94, 23);
+            this.importerTPToolStripMenuItem.Text = "Importer TP";
+            this.importerTPToolStripMenuItem.Click += new System.EventHandler(this.importerTPToolStripMenuItem_Click);
+            // 
             // PagePrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,5 +439,6 @@
         private System.Windows.Forms.ToolStripMenuItem compteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerDeLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changerDeMotDePasseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importerTPToolStripMenuItem;
     }
 }

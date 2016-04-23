@@ -1,28 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
     public partial class ChangerMdp : Form
     {
-        string login;
+        #region Private Fields
+
+        private readonly string login;
+
+        #endregion Private Fields
+
+        #region Public Constructors
+
         public ChangerMdp(string login)
         {
             InitializeComponent();
             this.login = login;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion Public Constructors
+
+        #region Private Methods
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -30,10 +29,17 @@ namespace WindowsFormsApplication2
             {
                 var reponse = Database.ChangerMdp(login, textBox2.Text, textBox1.Text);
                 if (reponse == 1)
-                    this.Close();
+                    Close();
             }
             else
                 MessageBox.Show("Confirmation du mot de passe incorrect");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        #endregion Private Methods
     }
 }

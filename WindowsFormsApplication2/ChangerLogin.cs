@@ -1,46 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
     public partial class ChangerLogin : Form
     {
-        string login;
-        PagePrincipal Pp;
+        #region Public Constructors
 
-        public ChangerLogin(string login,PagePrincipal p1)
+        public ChangerLogin(string login, PagePrincipal p1)
         {
             InitializeComponent();
             this.login = login;
-            this.Pp = p1;
+            Pp = p1;
         }
+
+        #endregion Public Constructors
+
+        #region Private Fields
+
+        private readonly string login;
+        private readonly PagePrincipal Pp;
+
+        #endregion Private Fields
+
+        #region Private Methods
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string reponse = Database.ChangerLogin(textBox1.Text, textBox2.Text,login);
+            var reponse = Database.ChangerLogin(textBox1.Text, textBox2.Text, login);
             if (!reponse.Equals(""))
             {
-                this.Close();
+                Close();
                 Pp.Majlog(reponse);
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ChangerLogin_Load(object sender, EventArgs e)
         {
-
         }
+
+        #endregion Private Methods
     }
 }
