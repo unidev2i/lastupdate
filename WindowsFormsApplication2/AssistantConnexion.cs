@@ -85,5 +85,13 @@ namespace WindowsFormsApplication2
             graphic2 = new Inscription(this);
             graphic2.Show();
         }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }

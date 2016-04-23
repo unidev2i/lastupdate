@@ -108,6 +108,7 @@ namespace WindowsFormsApplication2
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //CHANGEMENT D'ELEVE, FAIRE LES MODIFICATIONS DES GRAPHIQUES ...
+            //comboBox1_TextUpdate(sender,e);
             string str = comboBox1.Text;
             string[] result = Regex.Split(str, " ");
             string prenom = result[0];
@@ -205,6 +206,14 @@ namespace WindowsFormsApplication2
                     comboBox1.Items.Add(eleve[i]);
                 }
             }
+            var w = Database.GetWthRequest(promo);
+            var z = Database.GetWebClasseRequest(promo);
+
+            drawGraph(w);
+            //drawWeb(z);
+            chart1.Visible = true;
+            chart2.Visible = true;
+            chart3.Visible = true;
         }
 
         private void ajouterToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -234,12 +243,16 @@ namespace WindowsFormsApplication2
         {
             //BOUTON POUR AJOUTER UN ELEVE
             graphic = new AjoutEleve();
-            graphic.Show();
+            graphic.ShowDialog();
+            comboBox1.Items.Clear();
+            foreach (var a in Database.GetListRequest("eleve", new[] { "Prenom", "Nom" }))
+                comboBox1.Items.Add(a);
         }
 
         private void ajouterUnPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var ImportTp = new ImportTp(WindowsFormsApplication2.Properties.Settings.Default.repoPath);
+            ImportTp.ShowDialog();
         }
 
         private void changerDeMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)

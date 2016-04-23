@@ -23,7 +23,7 @@ namespace WindowsFormsApplication2
             MessageBox.Show(idClasse);
 
             ("INSERT INTO eleve (idClasse,Nom,Prenom) VALUES ('"+ idClasse + "','"+nom+"','"+prenom+"')").SimpleRequest();
-            MessageBox.Show("Ajout Réussit");
+            MessageBox.Show("Ajout Réussi");
 
         }
 
