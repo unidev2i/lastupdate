@@ -15,12 +15,10 @@ namespace WindowsFormsApplication2
         private const string COL_ADMIN = "Admin";
         private const string COL_IDSKILL = "idCompetence";
         private const string COL_IDELEVE = "idEleve";
-        private const string COL_NOTE = "Note";
+        private const string COL_NOTE = "note";
         private const string COL_MAXNOTE = "maxNote";
         private const string TAB_ELEVE = "eleve";
-        private const string COL_PROMO = "Promotion";
         private const string TAB_TP = "tp";
-        private const string TAB_CLASSE = "classe";
 
         private const string TAB_USER = "user";
 
@@ -98,7 +96,7 @@ namespace WindowsFormsApplication2
 
             while (r.Read())
             {
-                var toReturn = columns.Aggregate(string.Empty, (current, c) => current + r[c].ToString() + "");
+                var toReturn = columns.Aggregate(string.Empty, (current, c) => current + r[c].ToString() + " ");
                 retour.Add(toReturn);
             }
             r.Close();
@@ -142,31 +140,6 @@ namespace WindowsFormsApplication2
             r.Close();
             return a;
         }
-
-        public static List<Tuple<string,float,int>> GetWthRequest(string idPromo)
-        {
-            //var req2 =
-              // "SELECT " + COL_IDSKILL + ",COUNT(" + COL_NOTE + ") AS quantite, ((SUM(" + COL_NOTE + "/" + COL_MAXNOTE + ")/COUNT(" + COL_NOTE + "))*100) AS moyenne FROM " + TAB_ELEVE + " NATURAL JOIN " + TAB_TP + " NATURAL JOIN " + COL_NOTE + " WHERE " + COL_PROMO + " = " + idEleve + " GROUP BY " + COL_IDSKILL;
-            var req =
-               "SELECT " + COL_IDSKILL + ", count(*) AS nbTp, ((SUM("+COL_NOTE+"/"+COL_MAXNOTE+")/COUNT("+COL_NOTE+"))*100) AS moyenne FROM "+TAB_CLASSE+" NATURAL JOIN "+TAB_ELEVE+" NATURAL JOIN "+TAB_TP+" NATURAL JOIN "+COL_NOTE+" WHERE "+COL_PROMO+"="+idPromo+" GROUP BY "+COL_IDSKILL;
-
-            var command = _conn.CreateCommand();
-            command.CommandText = req;
-            var r = command.ExecuteReader();
-
-            List<Tuple<string, float, int>> a = new List<Tuple<string, float, int>>();
-
-            while (r.Read())
-            {
-                a.Add(new Tuple<string, float, int>(r[COL_IDSKILL].ToString(), float.Parse(r["moyenne"].ToString()), int.Parse(r["nbTp"].ToString()) ) );
-            }
-
-            r.Close();
-            return a;
-            
-        }
-
-
 
         public static string ChangerLogin(string login, string pass, string ancienlog)
         {
@@ -246,24 +219,6 @@ namespace WindowsFormsApplication2
             while (r.Read())
             {
                 retour.Add(new Tuple<string, float>(r[COL_IDSKILL].ToString(), float.Parse(r["SUM(" + COL_NOTE + ")"].ToString())));
-            }
-
-            r.Close();
-            return retour;
-        }
-
-        public static List<Tuple<string,float>> GetWebClasseRequest(string idPromo)
-        {
-            var retour = new List<Tuple<string, float>>();
-            var req =
-               "SELECT " + COL_IDSKILL + ", SUM(" + COL_NOTE + ")/count(DISTINCT "+COL_IDELEVE+") AS somme FROM " + TAB_CLASSE + " NATURAL JOIN " + TAB_ELEVE + " NATURAL JOIN " + TAB_TP + " NATURAL JOIN " + COL_NOTE + " WHERE " + COL_PROMO + "=" + idPromo + " GROUP BY " + COL_IDSKILL;
-            var command = _conn.CreateCommand();
-            command.CommandText = req;
-            var r = command.ExecuteReader();
-
-            while (r.Read())
-            {
-                retour.Add(new Tuple<string, float>(r[COL_IDSKILL].ToString(), float.Parse(r["somme"].ToString())));
             }
 
             r.Close();
