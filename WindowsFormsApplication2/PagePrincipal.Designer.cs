@@ -66,10 +66,10 @@
             this.compteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerDeLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changerDeMotDePasseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importerTPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.importerTPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -191,6 +191,7 @@
             this.sélectionnerLeDossierToolStripMenuItem.Name = "sélectionnerLeDossierToolStripMenuItem";
             this.sélectionnerLeDossierToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.sélectionnerLeDossierToolStripMenuItem.Text = "Sélectionner le dossier";
+            this.sélectionnerLeDossierToolStripMenuItem.Click += new System.EventHandler(this.sélectionnerLeDossierToolStripMenuItem_Click);
             // 
             // deconnexionToolStripMenuItem
             // 
@@ -308,6 +309,13 @@
             this.changerDeMotDePasseToolStripMenuItem.Text = "Changer de mot de passe";
             this.changerDeMotDePasseToolStripMenuItem.Click += new System.EventHandler(this.changerDeMotDePasseToolStripMenuItem_Click);
             // 
+            // importerTPToolStripMenuItem
+            // 
+            this.importerTPToolStripMenuItem.Name = "importerTPToolStripMenuItem";
+            this.importerTPToolStripMenuItem.Size = new System.Drawing.Size(94, 23);
+            this.importerTPToolStripMenuItem.Text = "Importer TP";
+            this.importerTPToolStripMenuItem.Click += new System.EventHandler(this.importerTPToolStripMenuItem_Click);
+            // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
@@ -369,13 +377,6 @@
             this.chart3.Text = "chart3";
             this.chart3.Visible = false;
             this.chart3.Click += new System.EventHandler(this.chart3_Click);
-            // 
-            // importerTPToolStripMenuItem
-            // 
-            this.importerTPToolStripMenuItem.Name = "importerTPToolStripMenuItem";
-            this.importerTPToolStripMenuItem.Size = new System.Drawing.Size(94, 23);
-            this.importerTPToolStripMenuItem.Text = "Importer TP";
-            this.importerTPToolStripMenuItem.Click += new System.EventHandler(this.importerTPToolStripMenuItem_Click);
             // 
             // PagePrincipal
             // 

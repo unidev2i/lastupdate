@@ -74,6 +74,7 @@
     <Compile Include="Aide.Designer.cs">
       <DependentUpon>Aide.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crypt.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DataGridDebug.cs">
       <SubType>Form</SubType>
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportTp.cs" />
+    <Compile Include="OptionTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionTP.Designer.cs">
+      <DependentUpon>OptionTP.cs</DependentUpon>
     </Compile>
     <Compile Include="Suppresion_User.cs">
       <SubType>Form</SubType>
@@ -155,6 +163,9 @@
     <EmbeddedResource Include="Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OptionTP.resx">
+      <DependentUpon>OptionTP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PagePrincipal.resx">
       <DependentUpon>PagePrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,13 +177,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Suppresion_User.resx">
       <DependentUpon>Suppresion_User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -182,7 +194,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
